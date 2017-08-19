@@ -4,14 +4,11 @@
   "description": "I'm learning webpack and this repository documents my progress.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ThisDaveHill/webpack-example.git"
-  },
-  "scripts": {
-    "build": "webpack"
   },
   "author": "Dave Hill",
   "license": "MIT",
@@ -20,6 +17,11 @@
   },
   "homepage": "https://github.com/ThisDaveHill/webpack-example#readme",
   "devDependencies": {
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
     "webpack": "^3.5.5"
   }
 }
