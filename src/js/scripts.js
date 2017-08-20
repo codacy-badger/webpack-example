@@ -1,6 +1,6 @@
 $(function() {
 
-  const test = "moo";
+  const test = "chicken";
 
   $('h1').html(test);
 

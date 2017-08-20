@@ -39,9 +39,6 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
-  devServer: {
-    contentBase: [path.join(__dirname, "./"), path.join(__dirname, "dist")]
-  },
   plugins: [
     new ExtractTextPlugin('../css/main.css'),
     new webpack.ProvidePlugin({

@@ -4,8 +4,7 @@
   "description": "I'm learning webpack and this repository documents my progress.",
   "main": "index.js",
   "scripts": {
-    "watch": "webpack --progress --watch",
-    "start": "webpack-dev-server --open",
+    "watch": "webpack --watch",
     "build": "webpack"
   },
   "repository": {
