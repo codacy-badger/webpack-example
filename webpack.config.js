@@ -5,7 +5,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry:  {
     app: './src/js/app.js',
-    //scss: './src/scss/main.scss'
   },
   output: {
     path: path.resolve(__dirname, 'dist/js'),
@@ -18,12 +17,36 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           //resolve-url-loader may be chained before sass-loader if necessary
-          use: ['css-loader', 'sass-loader']
+          use: [
+            {
+              loader: 'css-loader'
+            },
+            {
+              loader: 'sass-loader'
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  path: './postcss.config.js'
+                }
+              }
+            }
+
+          ]
         })
       }
     ]
   },
+  devtool: 'source-map',
+  devServer: {
+    contentBase: [path.join(__dirname, "./"), path.join(__dirname, "dist")]
+  },
   plugins: [
-    new ExtractTextPlugin('../css/main.css')
+    new ExtractTextPlugin('../css/main.css'),
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+    })
   ]
 };
