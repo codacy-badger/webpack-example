@@ -1,3 +1,2 @@
 require("../scss/main.scss");
-
-const test = "moo";
+require("./scripts.js");
